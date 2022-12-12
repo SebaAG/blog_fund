@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Borrar Post {% endblock %}
+{% block content %}
+
+<h1>Borrar Post</h1>
+<h3>Borrar: {{ post.title }}</h3>
+{% if user.is_authenticated %}
+<div class="form-group">d
+    <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-danger">Borrar</button>
+    </form>
+</div>
+{% else %}
+<p>Iniciar sesion para borrar.</p>
+{% endif %}
+
+{% endblock %}
