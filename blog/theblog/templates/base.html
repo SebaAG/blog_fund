@@ -22,30 +22,31 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
                     </li>
-                    {% if cat_menu %}
+                    {% comment %} {% if cat_menu %} {% endcomment %}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {% comment %} <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Categorias
                         </a>
-                        
+
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             {% for item in cat_menu %}
                                 <li><a class="dropdown-item" href="{% url 'category' item %}">{{ item }}</a></li>
                             {% endfor %}
-                        </ul>
+                        </ul> {% endcomment %}
+                        <a class="nav-link active" aria-current="page" href="{% url 'category' %}">¿Quienes Somos?</a>
                     </li>
-                    {% else %}
+                    {% comment %} {% else %}
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="{% url 'category-list' %}">Categorias</a>
                         </li>
-                    {% endif %}
+                    {% endif %} {% endcomment %}
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
+                    {% comment %} <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'add' %}">Nuevo Post</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> {% endcomment %}
+                    {% comment %} <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'category' %}">Nueva Categoria</a>
-                    </li>
+                    </li> {% endcomment %}
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'logout' %}">Cerrar Sesion</a>
                     </li>
