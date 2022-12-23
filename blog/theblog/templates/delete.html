@@ -5,14 +5,19 @@
 <h1>Borrar Post</h1>
 <h3>Borrar: {{ post.title }}</h3>
 {% if user.is_authenticated %}
-<div class="form-group">d
-    <form method="POST">
-        {% csrf_token %}
-        <button class="btn btn-danger">Borrar</button>
-    </form>
-</div>
+  {% if user.id == post.author.id %}
+    <div class="form-group">
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button class="btn btn-secondary">Borrar</button>
+        </form>
+      </div>
+  {% else %}
+      <p>No tienes permitido borrar.</p>
+  {% endif %}
 {% else %}
-<p>Iniciar sesion para borrar.</p>
+<p>Inicia sesion para borrar.</p>
 {% endif %}
 
 {% endblock %}

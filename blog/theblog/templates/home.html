@@ -4,9 +4,15 @@
 <h1>Fundacion Abrazar Tejiendo</h1>
 
 <ul>
-{% for post in object_list %}
-	<li><a href="{% url 'article' post.pk %}">{{ post.title }}</a> - {{ post.author }}  - {{ post.date }} | <a href="{% url 'category' post.category %}">{{ post.category }}</a>{% if user.is_authenticated %} | <a href="{% url 'edit' post.pk %}">[ Editar ]</a> <a href="{% url 'delete' post.pk %}">[ Borrar ]</a>{% endif %}<br/>
+  {% for post in object_list  %}
+	  <li><a href="{% url 'article' post.pk %}">{{ post.title }}</a> 
+    - {{ post.author }}  
+    - {{ post.date }} |
+    <a href="{% url 'category' post.category|slugify %}">{{ post.category }}</a>
+
+    <br/>
 		{{ post.body|slice:200|safe }}...</li>
-{% endfor %}
+  {% endfor %}
+  
 </ul>
 {% endblock %}
