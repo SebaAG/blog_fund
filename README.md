@@ -27,13 +27,13 @@ _Python, Django, Css y Html_
 _Grupo 6 Informatorio 2022_
 
 
-* **Alberto S. Garcia** 
 * **Alejandro J. Antonchuk** 
 * **Facundo	Uriarte** 
 * **Fernando D. Namtz** 
 * **Jonathan E. Sarasua**  
 * **Lucas E. Orrego** 
 * **Ruth Kano**  
+* **Sebastian A. Garcia** 
 
 
 ## Expresiones de Gratitud 🎁
